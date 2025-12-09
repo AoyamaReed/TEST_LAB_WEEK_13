@@ -1,0 +1,16 @@
+1. - Memisahkan UI dari logic
+   - Mudah di test karena tidak tergantung pada komponen Android
+   - Membantu scalability saat aplikasi membesar
+
+2. Karena Data Binding menghubungkan UI langsung ke data sehingga tidak perlu findViewById, UI otomatis memperbarui
+ketika data berubah, dan mengurangi error sinkronisasi manual.
+
+3. Karena memastikan database dan repository hanya dibuat satu kali, sehingga menghemat memori, menghindari konflik
+data, dan menjaga konsistensi dan performa.
+
+4. Repository berfungsi sebagai satu pintu untuk data (API + DB), sehingga ViewModel tidak perlu tahu detail data source,
+lebih mudah di test, dan kode lebih bersih.
+
+5. Selain WorkManager cara lain untuk merefresh database ada:
+   - Refresh manual (SwipeRefresh)
+   - Coroutine timer
